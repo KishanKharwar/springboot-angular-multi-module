@@ -1,0 +1,4 @@
+main\SpringAngularApplication.class
+main\entities\User.class
+main\controller\UserController.class
+main\repositories\UserRepository.class

@@ -1,0 +1,5 @@
+<p>testing</p>
+<form #usersForm="ngForm" (ngSubmit)="getUserFormData(usersForm.value)">
+  <input name="name" ngModel type="text">
+  <button>Add User</button>
+</form>
