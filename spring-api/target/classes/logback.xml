@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration>
 
-  <property name="HOME_LOG" value="logs/app.log"/>
+  <appender class="ch.qos.logback.core.rolling.RollingFileAppender" name="FILE-ROLLING">
+    <encoder>
+      <pattern>%d %p %c{1.} [%t] %m%n</pattern>
+    </encoder>
 
-  <appender name="FILE-ROLLING" class="ch.qos.logback.core.rolling.RollingFileAppender">
     <file>${HOME_LOG}</file>
 
     <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
@@ -12,19 +14,17 @@
       <maxFileSize>10MB</maxFileSize>
       <!-- total size of all archive files, if total size > 20GB,
   it will delete old archived file -->
-      <totalSizeCap>20GB</totalSizeCap>
-      <!-- 60 days to keep -->
       <maxHistory>60</maxHistory>
+      <!-- 60 days to keep -->
+      <totalSizeCap>20GB</totalSizeCap>
     </rollingPolicy>
-
-    <encoder>
-      <pattern>%d %p %c{1.} [%t] %m%n</pattern>
-    </encoder>
   </appender>
 
-  <logger name="com.igm.main" level="debug" additivity="false">
+  <logger additivity="false" level="debug" name="com.igm.main">
     <appender-ref ref="FILE-ROLLING"/>
   </logger>
+
+  <property name="HOME_LOG" value="logs/app.log"/>
 
   <root level="error">
     <appender-ref ref="FILE-ROLLING"/>

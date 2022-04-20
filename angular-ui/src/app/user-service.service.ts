@@ -7,7 +7,8 @@ export class UserServiceService {
   private usersUrl: string;
 
   constructor(private http: HttpClient) {
-    this.usersUrl = 'http://localhost:8080/spring-api/users';
+    //this.usersUrl = 'http://localhost:8080/spring-api/users';
+    this.usersUrl = '/users';
   }
 
   public findAll(){
