@@ -1,6 +1,10 @@
 Springboot-Angular multi-module maven project
 ==============================================
 
+Enable embeded tomcat along with wildfly dependency
+===================================================
+1. Edit Configuration -> Modify Options -> Java -> Add dependencies with provided scope.
+
 # Reference link :
 
 * [DZone Multi module project][https://dzone.com/articles/simplified-building-web-application-using-spring-b]
